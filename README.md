@@ -17,8 +17,8 @@
  
 The following are the API Details:
 
- - GET -> `getallbyrepoideventtype` ARGS -> `repoid & eventtype`
- - GET -> `getactordetailbyactorlogin` ARGS -> `actorid`
- - GET -> `getrepowithhighestevents` ARGS `actorid`
+ - GET -> `getallbyrepoideventtype` Query Params -> `repoid & eventtype`
+ - GET -> `getactordetailbyactorlogin` Query Params -> `actorid`
+ - GET -> `getrepowithhighestevents` Query Params `actorid`
  - GET -> `getrepowithtopcontributors`
- - DELETE -> `deleteactor` ARGS `actorid`
+ - DELETE -> `deleteactor` Query Params `actorid`
