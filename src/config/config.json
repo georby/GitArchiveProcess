@@ -2,5 +2,6 @@
     "dbconnection" : "mongodb://localhost:27017/GitArchive?retryWrites=true&w=majority",
     "dbname" : "GitArchive",
     "collectionname" : "Git Data",
-    "datasourcepath" : "./src/data/2019-01-01-15.json"
+    "datasourcepath" : "./src/data/2019-01-01-15.json",
+    "serverport" : "3000"
 }

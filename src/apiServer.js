@@ -96,8 +96,9 @@ app.delete('/deleteactor', (res,req) => {
 
 })
 
-app.listen(3000);
-console.log('Listening on port : 3000');
+app.listen(config.serverport);
+console.log('Listening on port : ' + config.serverport);
+
 console.log('API Get: getallbyrepoideventtype');
 console.log('API Get: getactordetailbyactorlogin');
 console.log('API Get: getrepowithhighestevents');
