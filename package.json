@@ -4,8 +4,8 @@
   "description": "A node app to get the user data and perform a DB dump with it.",
   "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/app.js"
+    "start:import": "node src/importData.js",
+    "start:api": "node src/apiServer.js"
   },
   "author": "Georby",
   "license": "MIT",
