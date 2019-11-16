@@ -1,13 +1,15 @@
 const MongoClient = require('mongodb').MongoClient;
 const config = require('./config/config.json');
-const client = new MongoClient(config.dbconnection, {useNewUrlParser: true, useUnifiedTopology: true});
+const client = new MongoClient(config.dbconnection, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 const fs = require('fs');
 const dbName = config.dbName;
 
-
 function groupBy(list, keyGetter) {
     const map = new Map();
-    list.forEach((item) => {
+    list.forEach(item => {
         const key = keyGetter(item);
         const collection = map.get(key);
         if (!collection) {
@@ -20,7 +22,9 @@ function groupBy(list, keyGetter) {
 }
 
 client.connect(async err => {
-    const d = fs.readFileSync(config.datasourcepath).toString()
+    const d = fs
+        .readFileSync(config.datasourcepath)
+        .toString()
         .split('\n')
         .filter(res => !!res.trim())
         .map(res => JSON.parse(res))
@@ -31,7 +35,8 @@ client.connect(async err => {
     map.forEach(async (e, data) => {
         console.log(data);
         try {
-            await client.db(dbName)
+            await client
+                .db(dbName)
                 .collection(config.collectionname)
                 .insertMany(e);
         } catch (e) {
