@@ -16,10 +16,9 @@
   ##### API Details
  
 The following are the API Details:
-| API Type | Name | ARGS |
-| ------ | ------ | ------ |
-| GET | getallbyrepoideventtype | repoid & eventtype |
-| GET | getactordetailbyactorlogin | actorid |
-| GET | getrepowithhighestevents | actorid |
-| GET | getrepowithtopcontributors | - |
-| DELETE | deleteactor | actorid |
+
+GET -> `getallbyrepoideventtype` ARGS -> `repoid & eventtype`
+GET -> `getactordetailbyactorlogin` ARGS -> `actorid`
+GET -> `getrepowithhighestevents` ARGS `actorid`
+GET -> `getrepowithtopcontributors`
+DELETE -> `deleteactor` ARGS `actorid`
