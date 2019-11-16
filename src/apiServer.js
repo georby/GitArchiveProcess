@@ -42,7 +42,7 @@ app.get('/getrepowithhighestevents', (res, req) => {
     client.connect();
     client.db(dbName)
         .collection(collectionName)
-        .aggregate([{$match: {"actor.login": req.query.actor}}, {$project: {_id: "$repo.id"}}, {
+        .aggregate([{$match: {"actor.login": req.query.actorid}}, {$project: {_id: "$repo.id"}}, {
             $group: {
                 _id: "$_id",
                 "count": {$sum: 1}
@@ -88,7 +88,7 @@ app.delete('/deleteactor', (res,req) => {
     client.connect();
     client.db(dbName)
         .collection(collectionName)
-        .deleteMany({'actor.login':req.query.id})
+        .deleteMany({'actor.login':req.query.actorid})
         .then(res1 => {
             client.close();
             req.send(res1.deletedCount)
